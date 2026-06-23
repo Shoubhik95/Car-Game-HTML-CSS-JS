@@ -29,19 +29,19 @@ A modern, responsive, and performance-optimized 2.5D parallax car racing game bu
 
 The project has been separated into clean, modular components:
 
-├── index.html          # Core HTML layout, HUD, overlays, and modal popups.
+├── index.html         
 
-├── profile.jpg         # Profile avatar for the Info card.
+├── profile.jpg         
 
-├── glowing_car.png     # Start screen background poster image.
+├── glowing_car.png     
 
-├── car_handling.js     # Canvas rendering loop, vector car calculations, and physics boundaries.
+├── car_handling.js    
 
-├── todays.js           # Audio engine oscillators, HUD bindings, popup selectors, and state transitions.
+├── todays.js           
 
-├── car_handling.css    # Layout rules for game container, canvas viewport, and steering panels.
+├── car_handling.css    
 
-└── todays.css          # Rules for landing screen, bottom nav tabs, glassmorphic cards, and rating panels.
+└── todays.css         
 ```
 
 ---
