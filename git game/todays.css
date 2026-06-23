@@ -1,0 +1,509 @@
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 6, 16, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#start-screen {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%), url('glowing_car.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px 50px 0 50px;
+}
+
+.screen.hidden,
+#start-screen.hidden,
+#game-over-screen.hidden,
+#game-win-screen.hidden,
+#countdown-overlay.hidden {
+    display: none !important;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.left-branding {
+    align-self: flex-start;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 82px;
+    font-weight: 900;
+    color: #f1c40f;
+    margin: 0;
+    line-height: 0.9;
+    text-shadow: 4px 4px 0px #000;
+    letter-spacing: -2px;
+}
+
+.sub-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.right-controls {
+    position: absolute;
+    right: 35px;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 6;
+}
+
+.side-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #222;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s ease;
+}
+
+.side-btn:hover {
+    background: #fff;
+    transform: scale(1.08);
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    gap: 5px;
+    margin-top: auto;
+}
+
+.nav-tab {
+    flex: 1;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 6px 6px 0 0;
+    transition: all 0.15s ease;
+    text-decoration: none;
+}
+
+.nav-tab .tab-icon {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.nav-tab .tab-text {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.tab-red {
+    background: linear-gradient(to bottom, #d9534f, #c9302c);
+    border-top: 2px solid #ff6b6b;
+}
+
+.tab-green {
+    background: linear-gradient(to bottom, #5cb85c, #4cae4c);
+    border-top: 2px solid #7fe57f;
+}
+
+.tab-grey {
+    background: linear-gradient(to bottom, #444, #222);
+    border-top: 2px solid #666;
+}
+
+.tab-grey.active {
+    background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+    border-top: 2px solid #60a5fa;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+
+.tab-yellow {
+    background: linear-gradient(to bottom, #f0ad4e, #ec971f);
+    border-top: 2px solid #ffd080;
+    flex: 1.4;
+    height: 80px;
+    border-radius: 8px 8px 0 0;
+}
+
+.tab-yellow .tab-text {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.tab-yellow:hover {
+    height: 85px;
+    background: linear-gradient(to bottom, #ec971f, #d58512);
+}
+
+.nav-tab:hover:not(.tab-yellow) {
+    transform: translateY(-4px);
+}
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    border: 2px solid #555;
+    outline: none;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+.btn-play {
+    background: #ec971f;
+    border-color: #f0ad4e;
+    color: #fff;
+}
+
+.btn-play:hover {
+    background: #d58512;
+}
+
+.neon-text-red {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    color: #ff3e3e;
+    margin-bottom: 10px;
+}
+
+.neon-text-green {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    color: #4cae4c;
+    margin-bottom: 10px;
+}
+
+.summary-text {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.final-stats {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 25px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.final-stats p {
+    margin: 8px 0;
+}
+
+.final-stats span {
+    color: #f1c40f;
+}
+
+.level-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid #39ff14;
+    box-shadow: 0 0 20px #39ff14;
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 8;
+    pointer-events: none;
+    animation: banner-pop 2s ease-in-out forwards;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.level-banner h2 {
+    color: #39ff14;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #39ff14;
+}
+
+.level-banner p {
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@keyframes banner-pop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%) scale(0.8);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8);
+    }
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-overlay.hidden {
+    display: none !important;
+}
+
+.glass-card {
+    position: relative;
+    width: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.settings-card, .rating-card {
+    background: rgba(20, 20, 30, 0.85);
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.settings-card h2, .rating-card h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #f1c40f;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.settings-desc {
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.close-popup-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.close-popup-btn:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.profile-header {
+    background: linear-gradient(135deg, rgba(93, 16, 41, 0.85), rgba(70, 10, 30, 0.9));
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.avatar-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #00f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+    overflow: hidden;
+}
+
+.profile-title {
+    text-align: left;
+}
+
+.profile-title h2 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.profile-title p {
+    font-size: 10px;
+    color: #00f0ff;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.profile-body {
+    background: linear-gradient(135deg, rgba(12, 78, 85, 0.85), rgba(8, 55, 60, 0.9));
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 900;
+    color: #00f0ff;
+    width: 90px;
+    text-align: left;
+}
+
+.info-value {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+}
+
+.resolution-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 25px 0 10px 0;
+}
+
+.res-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.res-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.res-btn.active {
+    background: linear-gradient(to bottom, #f0ad4e, #ec971f);
+    border-color: #ffd080;
+    color: #000;
+    font-weight: 900;
+    box-shadow: 0 0 12px rgba(236, 151, 31, 0.4);
+}
+
+.countdown-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 80px;
+    color: #fff200;
+    text-shadow: 0 0 20px #fff200, 0 0 40px #ff007f;
+    display: inline-block;
+}
+
+.countdown-text.pop {
+    animation: countdown-pop 0.9s steps(30) forwards;
+}
+
+@keyframes countdown-pop {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
