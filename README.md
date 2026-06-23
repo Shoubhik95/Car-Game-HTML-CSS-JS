@@ -1,10 +1,10 @@
-# 🏎️ CAR DRIVE RACING 2.5D
+# CAR DRIVE RACING 2.5D
 
 A modern, responsive, and performance-optimized 2.5D parallax car racing game built entirely using **HTML5 Canvas, Vanilla CSS, and modular Javascript**.
 
 ---
 
-## 🎮 Game Features
+## Game Features
 
 - **2.5D Parallax Scrolled Road**: Smooth, high-performance pseudo-3D road rendering without lag or glitches.
 - **Detailed Vector Graphics**: Realistic sports cars drawn dynamically using canvas vectors (rear perspective, brake lights, spoilers, side-mirrors).
@@ -15,7 +15,7 @@ A modern, responsive, and performance-optimized 2.5D parallax car racing game bu
 
 ---
 
-## 🕹️ Controls Guide
+## Controls Guide
 
 | Control | Action | Keyboard Key | Mouse / Touch Click |
 | :--- | :--- | :--- | :--- |
@@ -25,11 +25,9 @@ A modern, responsive, and performance-optimized 2.5D parallax car racing game bu
 
 ---
 
-## 📁 File Structure
+##File Structure
 
 The project has been separated into clean, modular components:
-
-```bash
 ├── index.html          # Core HTML layout, HUD, overlays, and modal popups.
 ├── profile.jpg         # Profile avatar for the Info card.
 ├── glowing_car.png     # Start screen background poster image.
